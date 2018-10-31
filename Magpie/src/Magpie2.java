@@ -11,7 +11,21 @@ public class Magpie2 {
     if (statement.indexOf("no") >= 0) {
       response = "Why so negative?"
     } else if (statement.indexOf("mother") >= 0 || statement.indexOf("father") >= 0 || statement.indexOf("brother") >= 0 || statement.indexOf("sister") >= 0) {
-      response = "Tell me more about your family";
+      response = "Tell me more about your family.";
+    } else if (statement.indexOf("cat") >= 0 || statement.indexOf("dog") >= 0) {
+      response = "Tell me more about your pets.";
+    } else if (statement.indexOf("mr.scialdoni") >= 0) {
+      response = "Mr.Scialdoni sounds like a great guy.";
+    } else if (statement.trim().length() >= 0) {
+      response = "Please say something.";
+    } else if (statement.indexOf("spooky") >= 0 || statement.indexOf("scary") >= 0 || statement.indexOf("skeleton") >= 0) {
+      response = "Happy Halloween!";
+    } else if (statement.indexOf("dance") >= 0) {
+      response = "Do you like to dance?";
+    } else if (statement.indexOf("or") >= 0 || statement.indexOf("either") >= 0) {
+      response = "Yes.";
+    } else if (statement.indexOf("human") >= 0) {
+      response = "Yes. I, too, am one of these \"Humans\".";
     } else {
       response = getRandomResponse();
     }
