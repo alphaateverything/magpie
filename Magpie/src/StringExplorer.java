@@ -20,6 +20,8 @@ System.out.println ("sample.toLowerCase()
 = " + lowerCase);
 System.out.println ("After toLowerCase(),
 sample = " + sample);
+                    int notFoundPsn = sample.indexOf("slow");
+System.out.println("sample.indexOf(\"slow\") = " + notFoundPsn);
 // Try other methods here:
 }
 }
