@@ -22,27 +22,27 @@ if (statement.length() == 0)
 {
 response = "Say something, please.";
 }
-else if (findKeyword(statement, "no") &gt;= 0)
+else if (findKeyword(statement, "no") >= 0)
 {
 response = "Why so negative?";
 }
-else if (findKeyword(statement, "mother") &gt;= 0
+else if (findKeyword(statement, "mother") >= 0
 
-|| findKeyword(statement, "father") &gt;= 0
-|| findKeyword(statement, "sister") &gt;= 0
-|| findKeyword(statement, "brother") &gt;= 0)
+|| findKeyword(statement, "father") >= 0
+|| findKeyword(statement, "sister") >= 0
+|| findKeyword(statement, "brother") >= 0)
 
 {
 response = "Tell me more about your family.";
 }
 // Responses which require transformations
-else if (findKeyword(statement, "I want to", 0) &gt;= 0)
+else if (findKeyword(statement, "I want to", 0) >= 0)
 {
 response = transformIWantToStatement(statement);
 }
 
 // Part of student solution
-else if (findKeyword(statement, "I want", 0) &gt;= 0)
+else if (findKeyword(statement, "I want", 0) >= 0)
 {
 response = transformIWantStatement(statement);
 }
@@ -51,9 +51,9 @@ else
 // Look for a two word (you &lt;something&gt; me)
 // pattern
 int psn = findKeyword(statement, "you", 0);
-if (psn &gt;= 0
+if (psn >= 0
 
-&amp;&amp; findKeyword(statement, "me", psn) &gt;=
+&& findKeyword(statement, "me", psn) >=
 
 0)
 
@@ -66,11 +66,11 @@ else
 // Look for a two word (I &lt;something&gt; you)
 // pattern
 psn = findKeyword(statement, "i", 0);
-if (psn &gt;= 0
+if (psn >= 0
 
-&amp;&amp; findKeyword(statement, "you",
+&& findKeyword(statement, "you",
 
-psn) &gt;= 0)
+psn) >= 0)
 
 {
 response =
@@ -227,16 +227,16 @@ goal = goal.toLowerCase();
 int psn = phrase.indexOf(goal, startPos);
 // Refinement--make sure the goal isn&#39;t part of a
 // word
-while (psn &gt;= 0)
+while (psn >= 0)
 {
 // Find the string of length 1 before and after
 // the word
 String before = " ", after = " ";
-if (psn &gt; 0)
+if (psn > 0)
 {
 before = phrase.substring(psn - 1, psn);
 }
-if (psn + goal.length() &lt; phrase.length())
+if (psn + goal.length() < phrase.length())
 {
   after = phrase.substring(
 
@@ -246,18 +246,18 @@ if (psn + goal.length() &lt; phrase.length())
   }
   // If before and after aren&#39;t letters, we&#39;ve
   // found the word
-  if (((before.compareTo("a") &lt; 0) || (before
+  if (((before.compareTo("a") < 0) || (before
 
-  .compareTo("z") &gt; 0)) // before is not
+  .compareTo("z") > 0)) // before is not
 
   a
   // letter
 
-  &amp;&amp; ((after.compareTo("a") &lt; 0) ||
+  && ((after.compareTo("a") < 0) ||
 
   (after
 
-  .compareTo("z") &gt; 0)))
+  .compareTo("z") > 0)))
 
   {
   return psn;
@@ -298,7 +298,7 @@ if (psn + goal.length() &lt; phrase.length())
 
   "Hmmm.",
   "Do you really think so?",
-  "You don&#39;t say."
+  "You don't say."
 
   };
 }
