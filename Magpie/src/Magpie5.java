@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Magpie5
 {
 /**
@@ -164,9 +166,7 @@ String restOfStatement = statement.substring(psnOfYou + 3,
 
 psnOfMe).trim();
 
-return "What makes you think that I " + restOfStatement + "
-
-you?";
+return "What makes you think that I " + restOfStatement + "you?";
 }
 /**
 * Take a statement with &quot;I &lt;something&gt; you&quot; and transform it into
@@ -244,14 +244,11 @@ if (psn + goal.length() < phrase.length())
   psn + goal.length() + 1);
 
   }
-  // If before and after aren&#39;t letters, we&#39;ve
+  // If before and after aren&#39;t letters, we've
   // found the word
   if (((before.compareTo("a") < 0) || (before
 
-  .compareTo("z") > 0)) // before is not
-
-  a
-  // letter
+  .compareTo("z") > 0)) // before is not a letter
 
   && ((after.compareTo("a") < 0) ||
 
@@ -262,7 +259,7 @@ if (psn + goal.length() < phrase.length())
   {
   return psn;
   }
-  // The last position didn&#39;t work, so let&#39;s find
+  // The last position didn't work, so let&#39;s find
   // the next, if there is one.
   psn = phrase.indexOf(goal, psn + 1);
   }
@@ -291,7 +288,7 @@ if (psn + goal.length() < phrase.length())
   */
   private String getRandomResponse ()
   {
-  Random r = new Random ();
+  Random r = new Random();
   return randomResponses [r.nextInt(randomResponses.length)];
   }
   private String [] randomResponses = {"Interesting, tell me more",
