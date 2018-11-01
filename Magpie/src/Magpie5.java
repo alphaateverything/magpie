@@ -298,7 +298,11 @@ if (psn + goal.length() < phrase.length())
 
   "Hmmm.",
   "Do you really think so?",
-  "You don't say."
+  "You don't say.",
+  "How much wood would a woodchuck chuck if a woodchuck would cuck chood?",
+  "...\n...\n...\nWait, you're still here?",
+  "Hold on, I think someone's calling me.",
+  "I'll be down in a minute mom!\n...\nSorry about that, what were you saying?"
 
   };
 }
