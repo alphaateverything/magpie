@@ -32,7 +32,7 @@ public class Magpie2 {
     
     return response;
   }
-	private int findKeyword(String statement, "sister",
+	private int findKeyword( statement, "sister",
 			0)
 	{
 		String phrase = statement.trim();
@@ -40,12 +40,10 @@ public class Magpie2 {
 		int psn = phrase.toLowerCase().indexOf(
 				goal.toLowerCase(), startPos);
 
-		// Refinement--make sure the goal isn't part of a
-		// word
+		
 		while (psn >= 0)
 		{
-			// Find the string of length 1 before and after
-			// the word
+			
 			String before = " ", after = " ";
 			if (psn > 0)
 			{
@@ -71,8 +69,7 @@ public class Magpie2 {
 				return psn;
 			}
 
-			// The last position didn't work, so let's find
-			// the next, if there is one.
+			
 			psn = phrase.indexOf(goal.toLowerCase(),
 					psn + 1);
 
