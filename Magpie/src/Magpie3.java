@@ -1,4 +1,4 @@
-public class Magpie2 {
+public class Magpie3 {
   //Starts the chatbot with a greeting
   public String getGreeting() {
     return "Hello, let's talk";
@@ -8,23 +8,23 @@ public class Magpie2 {
   public String getResponse(String statement) {
     String response = "";
     
-    if (statement.indexOf("no") >= 0) {
+    if (findKeyword(statement, "no") >= 0) {
       response = "Why so negative?";
-    } else if (statement.indexOf("mother") >= 0 || statement.indexOf("father") >= 0 || statement.indexOf("brother") >= 0 || statement.indexOf("sister") >= 0) {
+    } else if (findKeyword(statement, "mother") >= 0 || findKeyword(statement, "father") >= 0 || findKeyword(statement, "brother") >= 0 || findKeyword(statement, "sister") >= 0) {
       response = "Tell me more about your family.";
-    } else if (statement.indexOf("cat") >= 0 || statement.indexOf("dog") >= 0) {
+    } else if (findKeyword(statement, "cat") >= 0 || findKeyword(statement, "dog") >= 0) {
       response = "Tell me more about your pets.";
-    } else if (statement.indexOf("mr.scialdoni") >= 0) {
-      response = "Mr.Scialdoni sounds like a great guy.";
-    } else if (statement.trim().length() >= 0) {
+    } else if (findKeyword(statement, "Mr.Scialdoni") >= 0) {
+      response = "He sounds like a great guy.";
+    } else if (statement.trim().length() <= 0) {
       response = "Please say something.";
-    } else if (statement.indexOf("spooky") >= 0 || statement.indexOf("scary") >= 0 || statement.indexOf("skeleton") >= 0) {
+    } else if (findKeyword(statement, "spooky") >= 0 || findKeyword(statement, "scary") >= 0 || findKeyword(statement, "skeletons") >= 0) {
       response = "Happy Halloween!";
-    } else if (statement.indexOf("dance") >= 0) {
+    } else if (findKeyword(statement, "dance") >= 0) {
       response = "Do you like to dance?";
-    } else if (statement.indexOf("or") >= 0 || statement.indexOf("either") >= 0) {
+    } else if (findKeyword(statement, "or") >= 0 || findKeyword(statement, "either") >= 0) {
       response = "Yes.";
-    } else if (statement.indexOf("human") >= 0) {
+    } else if (findKeyword(statement, "human") >= 0) {
       response = "Yes. I, too, am one of these \"Humans\".";
     } else {
       response = getRandomResponse();
@@ -32,13 +32,12 @@ public class Magpie2 {
     
     return response;
   }
-	private int findKeyword( String statement, String goal,
-			0)
+  
+  private int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim();
 
-		int psn = phrase.toLowerCase().indexOf(
-				goal.toLowerCase(), startPos);
+		int psn = phrase.toLowerCase().indexOf(goal.toLowerCase(), startPos);
 
 		
 		while (psn >= 0)
@@ -90,7 +89,7 @@ public class Magpie2 {
     
     final int NUMBER_OF_RESPONSES = 4;
     double r = Math.random();
-    int whichResponse = (int) (r * NUMBER_OF_RESPONSEs);
+    int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
     
     if (whichResponse == 0) {
       response = "Interesting, tell me more";
