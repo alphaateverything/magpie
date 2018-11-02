@@ -32,8 +32,8 @@ public class Magpie2 {
     
     return response;
   }
-	private int findKeyword(String statement, "no",
-			int startPos)
+	private int findKeyword(String statement, "sister",
+			0)
 	{
 		String phrase = statement.trim();
 
