@@ -32,7 +32,7 @@ public class Magpie2 {
     
     return response;
   }
-	private int findKeyword( statement, "sister",
+	private int findKeyword( String statement, String goal,
 			0)
 	{
 		String phrase = statement.trim();
